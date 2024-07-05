@@ -2,7 +2,7 @@ import { useContext, createContext, useState } from 'react';
 
 const cartContext = createContext();
 
-export const cartProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
 	const [products, setProducts] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -46,5 +46,5 @@ export const cartProvider = ({ children }) => {
 };
 
 export const useCartContext = () => {
-	return useContext(cartContext);
+	return useContext(CartContext);
 };
