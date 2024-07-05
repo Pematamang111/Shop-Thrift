@@ -9,13 +9,14 @@ export const cartProvider = ({ children }) => {
 	const toggleCart = () => setIsOpen((prev) => !prev);
 
 	const addProduct = (product) => {
-		const isExisting = product.find((p) => p.id === product.id);
+		const isExisting = products.find((p) => p.id === product.id);
 
 		if (isExisting) {
 			setProducts((prev) => {
 				const updatedProducts = prev.map((p) => {
 					return p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p;
 				});
+				return updatedProducts;
 			});
 		} else {
 			setProducts((prev) => {
@@ -23,6 +24,25 @@ export const cartProvider = ({ children }) => {
 			});
 		}
 	};
+
+	const removeProduct = (product) => {
+		setProducts(prev => {
+			const filteredProducts = prev.filter((p) => p.id !== product.id)
+
+			return filteredProducts;
+		})
+	}
+
+<cartContext.Provider value= {{
+	isOpen,
+	toggleCart,
+	addProduct,
+	removeProduct,
+	products
+}}>
+	{children}
+</cartContext.Provider> 
+
 };
 
 export const useCartContext = () => {
