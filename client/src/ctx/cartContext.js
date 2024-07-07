@@ -26,23 +26,23 @@ export const CartProvider = ({ children }) => {
 	};
 
 	const removeProduct = (product) => {
-		setProducts(prev => {
-			const filteredProducts = prev.filter((p) => p.id !== product.id)
+		setProducts((prev) => {
+			const filteredProducts = prev.filter((p) => p.id !== product.id);
 
 			return filteredProducts;
-		})
-	}
+		});
+	};
 
-<cartContext.Provider value= {{
-	isOpen,
-	toggleCart,
-	addProduct,
-	removeProduct,
-	products
-}}>
-	{children}
-</cartContext.Provider> 
-
+	<cartContext.Provider
+		value={{
+			isOpen,
+			toggleCart,
+			addProduct,
+			removeProduct,
+			products,
+		}}>
+		{children}
+	</cartContext.Provider>;
 };
 
 export const useCartContext = () => {
