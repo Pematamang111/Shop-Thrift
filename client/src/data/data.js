@@ -1,7 +1,7 @@
-import img1 from '../assets/evelyn.png';
+import img1 from '../assets/Evelyn.png';
 import img2 from '../assets/IMG_E9320.JPG';
 import img3 from '../assets/john.jpg';
-import img4 from '../assets/MIchelle.jpg';
+import img4 from '../assets/Michelle.jpg';
 
 export const products = [
 	{
