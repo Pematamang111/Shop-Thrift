@@ -3,7 +3,7 @@ import './productItem.css';
 import products from '../../data/data';
 import { useCartContext } from '../../ctx/cartContext';
 
-export const Products = () => {
+export const ProductItem = () => {
 	const { addProduct } = useCartContext();
 	return (
 		<div className="container">
