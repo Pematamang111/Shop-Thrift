@@ -14,3 +14,11 @@
     gap: 1.5rem;
     border: 1px solid #efefef;
 }
+
+
+.product > img {
+  width: 225px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
