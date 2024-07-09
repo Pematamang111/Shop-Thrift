@@ -8,7 +8,7 @@ export const ProductItem = () => {
 	return (
 		<div className="container">
 			{products.map((product) => (
-				<div key={product.id} className='product'>
+				<div key={product.id} className="product">
 					<img src={product.img} alt="apparal" />
 					<div className="productDetails">
 						<h3>{product.name}</h3>
