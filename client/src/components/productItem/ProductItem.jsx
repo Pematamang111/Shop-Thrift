@@ -7,7 +7,7 @@ export const ProductItem = () => {
 	const { addProduct } = useCartContext();
 	return (
 		<div className="container">
-			{products.map((product) => {
+			{products.map((product) => (
 				<div key={product.id}>
 					<img src={product.img} alt="apparal" />
 					<div className="product-details">
@@ -15,8 +15,8 @@ export const ProductItem = () => {
 						<span>${product.price}</span>
 					</div>
 					<button onClick={() => addProduct(product)}>Add To Cart</button>
-				</div>;
-			})}
+				</div>
+			))}
 		</div>
 	);
 };
