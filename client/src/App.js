@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Cart } from './components/cart/Cart';
 import { ProductItem } from './components/productItem/ProductItem';
+import { Success } from './components/success/Success';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
          <ProductItem />
           </>
         }/>
-        <Route/>
+        <Route path='/success' element={<Success />} />
       </Routes>
     </div>
   );
