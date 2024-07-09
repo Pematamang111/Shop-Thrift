@@ -22,3 +22,10 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

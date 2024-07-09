@@ -10,7 +10,7 @@ export const ProductItem = () => {
 			{products.map((product) => (
 				<div key={product.id} className='product'>
 					<img src={product.img} alt="apparal" />
-					<div className="product-details">
+					<div className="productDetails">
 						<h3>{product.name}</h3>
 						<span>${product.price}</span>
 					</div>
