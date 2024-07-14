@@ -1,31 +1,31 @@
 .container {
-    margin-top: 0.5rem;
-    height: 60px;
-    width: 100%;
+	margin-top: 0.5rem;
+	height: 60px;
+	width: 100%;
 }
 
 .wrapper {
-    padding: 0.25rem 1.25rem;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
+	padding: 0.25rem 1.25rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .cartIcon {
-    position: relative;
+	position: relative;
 }
 
 .cartNumber {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: green;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 2.5rem;
-    right: -0.5rem;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: green;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 2.5rem;
+	right: -0.5rem;
 }
