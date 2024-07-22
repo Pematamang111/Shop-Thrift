@@ -29,3 +29,29 @@
 	bottom: 2.5rem;
 	right: -0.5rem;
 }
+
+.cartContainer {
+	position: absolute;
+	top: 1.75rem;
+	background-color: #efefef;
+	padding: 1rem;
+}
+
+.cartContainer > h4 {
+	margin-bottom: 1.5rem;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.cartContainer > .controls > span {
+  display: inline-block;
+}
+
+.productContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.75rem;
+}
+

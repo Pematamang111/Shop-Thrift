@@ -30,6 +30,10 @@ export const Cart = () => {
 								  </div>
 								))}
 							</div>
+							<div className="controls">
+								<button onClick={() => {}}></button>
+								<span onClick={toggleCart}>Close Cart</span>
+							</div>
 							</>
 						) : (<h3>No products in cart</h3>)}
 					</div>
