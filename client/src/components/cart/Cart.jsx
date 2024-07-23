@@ -2,9 +2,14 @@ import React from 'react';
 import './cart.css';
 import { useCartContext } from '../../ctx/cartContext';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
+import { loadStripe } from '@stripe/stripe-js'
 
 export const Cart = () => {
 	const { products, toggleCart, isOpen, removeProduct } = useCartContext;
+	const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
+	const handleCheckout = async() => {
+        
+	}
 
 	return (
 		<div className="container">
