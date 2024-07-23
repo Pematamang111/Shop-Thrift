@@ -8,7 +8,18 @@ export const Cart = () => {
 	const { products, toggleCart, isOpen, removeProduct } = useCartContext;
 	const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
 	const handleCheckout = async() => {
-        
+        const lineItems = await products.map((item) => {
+            return {
+				price_data: {
+					currency: 'usd',
+					product_data: {
+						name: item.name
+					},
+					unit_amount: item.price * 100
+				},
+				quantity: item.quantity
+			}
+		})
 	}
 
 	return (
