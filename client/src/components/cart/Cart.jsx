@@ -20,6 +20,8 @@ export const Cart = () => {
 				quantity: item.quantity
 			}
 		})
+
+		const {data} = axios.post('http://localhost:5000/checkout', {lineItems})
 	}
 
 	return (
