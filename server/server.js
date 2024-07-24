@@ -8,6 +8,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post()
+app.post('/checkout', async(req, res) => {
+    try{
+     
+    }catch (error) {
+       return res.status(500).json(error);
+    }
+})
 
 app.listen(process.env.PORT, () => console.log('Server is running successfully'))
