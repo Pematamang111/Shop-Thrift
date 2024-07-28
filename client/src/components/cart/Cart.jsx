@@ -2,32 +2,34 @@ import React from 'react';
 import './cart.css';
 import { useCartContext } from '../../ctx/cartContext';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
-import { loadStripe } from '@stripe/stripe-js'
-import axios from 'axios'
+import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
 
 export const Cart = () => {
 	const { products, toggleCart, isOpen, removeProduct } = useCartContext;
-	const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY)
-	const handleCheckout = async() => {
-        const lineItems = products.map((item) => {
-            return {
+	const stripePromise = loadStripe(
+		process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+	);
+	const handleCheckout = async () => {
+		const lineItems = products.map((item) => {
+			return {
 				price_data: {
 					currency: 'usd',
 					product_data: {
-						name: item.name
+						name: item.name,
 					},
-					unit_amount: item.price * 100
+					unit_amount: item.price * 100,
 				},
-				quantity: item.quantity
-			}
-		})
+				quantity: item.quantity,
+			};
+		});
 
-		const {data} = axios.post('http://localhost:5000/checkout', {lineItems})
-		const stripe = await stripePromise
-		await stripe.redirectToCheckout({sessionId: data.id})
-
-	}
-
+		const { data } = axios.post('http://localhost:5000/checkout', {
+			lineItems,
+		});
+		const stripe = await stripePromise;
+		await stripe.redirectToCheckout({ sessionId: data.id });
+	};
 
 	return (
 		<div className="container">
