@@ -24,12 +24,13 @@ export const Cart = () => {
 			};
 		});
 
-		const { data } = axios.post('http://localhost:5000/checkout', {
+		const { data } = await axios.post('http://localhost:5000/checkout', {
 			lineItems,
 		});
 		const stripe = await stripePromise;
 		await stripe.redirectToCheckout({ sessionId: data.id });
 	};
+
 
 	return (
 		<div className="container">
